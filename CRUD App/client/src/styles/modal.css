@@ -1,0 +1,25 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  width: 420px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.modal form {
+  display: grid;
+  gap: 12px;
+}
+
+.modal-actions {
+  text-align: right;
+}

@@ -1,0 +1,14 @@
+.user-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.user-form button {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+}

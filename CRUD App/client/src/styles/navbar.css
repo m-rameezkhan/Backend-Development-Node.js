@@ -1,0 +1,20 @@
+.navbar {
+  height: 60px;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.nav-logo {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.nav-links span {
+  font-size: 14px;
+  opacity: 0.9;
+}
