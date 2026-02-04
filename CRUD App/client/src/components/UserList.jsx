@@ -17,7 +17,7 @@ const UserList = ({ users, onDelete, onEdit }) => {
 
       <tbody>
         {users.map((u) => (
-          <tr key={u.id}>
+          <tr key={u._id}>
             <td>{u.name}</td>
             <td>{u.email}</td>
             <td>{u.age}</td>
@@ -26,7 +26,7 @@ const UserList = ({ users, onDelete, onEdit }) => {
               <button className="action-btn edit-btn" onClick={() => onEdit(u)}>
                 Edit
               </button>
-              <button className="action-btn delete-btn" onClick={() => onDelete(u.id)}>
+              <button className="action-btn delete-btn" onClick={() => onDelete(u._id)}>
                 Delete
               </button>
             </td>

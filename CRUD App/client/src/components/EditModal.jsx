@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../styles/modal.css";
+import axios from "axios";
 
 const EditModal = ({ user, onUpdate, onClose }) => {
   const [form, setForm] = useState(user);
@@ -7,9 +8,27 @@ const EditModal = ({ user, onUpdate, onClose }) => {
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
 
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
-    onUpdate(form);
+
+    try {
+      const res = await axios.put(
+        `http://localhost:3000/api/user-update/${form._id}`,
+        form
+      );
+
+      // update UI ONLY if backend succeeded
+      onUpdate(res.data.data || form);
+      onClose();
+
+    } catch (error) {
+      const msg =
+        error.response?.data?.message || "Error updating user";
+
+      console.error(msg);
+      alert(msg); // or toast.error(msg)
+    }
+
   };
 
   return (
